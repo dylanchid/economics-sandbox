@@ -221,7 +221,7 @@ export const useEconomyStore = create<EconomyStore>()(
         // Update firms
         const updatedFirms = state.firms.map((firm) => {
           const productivityGrowth = 1 + (parameters.techAdoption * 0.05);
-          const costGrowth = 1 + (parameters.inflation / 100);
+          const costGrowth = 1 + (state.macroIndicators.inflation / 100);
           
           return {
             ...firm,
